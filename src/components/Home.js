@@ -4,7 +4,11 @@ import formatDollar from '../utils/formatDollar'
 
 export const Home = ({car}) => {
   if (car === null) {
-    return <div>No car found</div>
+    return (
+      <div className="text-center">
+        <p>No car found</p>
+      </div>
+    )
   }
   const {name, price, imageUrl, review} = car
   return (
@@ -13,7 +17,9 @@ export const Home = ({car}) => {
       <img className="card-img-top" src={imageUrl} alt={name} />
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
-        <p className="card-text">{formatDollar(price * 100)}</p>
+        <p className="card-text" data-testid="price">
+          {formatDollar(price * 100)}
+        </p>
         <p className="card-text">{review}</p>
       </div>
     </div>

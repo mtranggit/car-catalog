@@ -1,3 +1,7 @@
+docker run -v /c/Users/micha/Work/playground/car-catalog/testcafe:/tests -it testcafe/testcafe 'chromium --no-s
+andbox,firefox' /tests/*.e2e.js
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
