@@ -1,5 +1,54 @@
-docker run -v /c/Users/micha/Work/playground/car-catalog/testcafe:/tests -it testcafe/testcafe 'chromium --no-s
-andbox,firefox' /tests/*.e2e.js
+# Car catalog app
+
+This simple app demonstrates a typical spa implementation using React with Redux as its state management including:
+
+* Class based components and functional components
+* Routing with react-router
+* Services via asynchronous data fetching using async/await
+* Unit tests with react-redux, compononents unit testing with react-testing-library
+* End to end testing with Testcafe
+
+## Running the project locally
+
+1. Install npm packages
+
+`npm install`
+
+or if you use yarn
+
+`yarn install` or just `yarn`
+
+2. Run `npm start` or `yarn start`
+
+3. Navigate your browser to `http://localhost:3000/`
+
+## Running unit tests
+
+Run `npm test` or `npm t`
+
+or 
+
+Run `yarn test`
+
+## Running end to end testing
+
+Run `npm run testcafe`
+
+## Running end to end testing with TestCafe Docker image
+
+1. Install Docker to your system, see <a href="https://docs.docker.com/install/">Install Docker</a>
+
+2. Download TestCafe Docker image from the repository
+
+`docker pull testcafe/testcafe`
+
+3. Run TestCafe from the docker image (on Mac)
+
+Update prod baseUrl in the testCafe config file `testcafe/testcafeConfig.js` to match the app local network url
+
+From your terminal, navigate to project root directory and run
+
+`docker run -v $(pwd)/testcafe:/tests -it testcafe/testcafe 'chromium --no-sandbox,firefox' /tests/*.e2e.js`
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
