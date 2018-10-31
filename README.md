@@ -44,7 +44,7 @@ Run `npm run testcafe`
 
 3. Run TestCafe from the docker image (on Mac)
 
-Update prod baseUrl in the testCafe config file `testcafe/testcafeConfig.js` to match the app local network url
+Update test baseUrl in the testCafe config file `testcafe/testcafeConfig.js` to match the app local network url
 
 From your terminal, navigate to project root directory and run
 
