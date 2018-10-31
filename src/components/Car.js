@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import formatDollar from '../utils/formatDollar'
 
-const Car = ({car}) => {
+export const Car = ({car}) => {
   if (!car) {
     return <p>This car does not exist</p>
   }
@@ -21,7 +21,7 @@ const Car = ({car}) => {
   )
 }
 
-const mapStateToProps = ({carCatalogue}, {match}) => {
+export const mapStateToProps = ({carCatalogue}, {match}) => {
   const {id} = match.params
   const {makeEntities, modelEntities} = carCatalogue
   const model = modelEntities[id]

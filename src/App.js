@@ -14,7 +14,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 // import logo from './logo.svg'
 import './App.scss'
 
-class App extends Component {
+export class App extends Component {
   componentDidMount() {
     this.props.dispatch(handleInitialData())
   }

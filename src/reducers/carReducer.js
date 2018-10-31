@@ -1,5 +1,5 @@
 import {RECEIVE_MAKES, RECEIVE_MODELS, CAR_OF_THE_WEEK} from '../actions/cars'
-import {formatMakes, formatModels} from '../utils/api'
+import {formatEntities} from '../utils/api'
 
 const initialState = {
   makes: [],
@@ -16,7 +16,7 @@ export default function makes(state = initialState, action) {
       return {
         ...state,
         makes,
-        makeEntities: formatMakes(makes),
+        makeEntities: formatEntities(makes),
       }
     }
 
@@ -25,7 +25,7 @@ export default function makes(state = initialState, action) {
       return {
         ...state,
         models,
-        modelEntities: formatModels(models),
+        modelEntities: formatEntities(models),
       }
     }
 

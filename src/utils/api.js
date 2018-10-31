@@ -1,27 +1,19 @@
 import {_getMakes, _getModels, _getCarOfTheWeek} from './_DATA.js'
 
-export function formatMakes(makes) {
-  return makes.reduce((formattedMakes, make) => {
-    formattedMakes[make.id] = {
-      ...make,
+export function formatEntities(entities) {
+  return entities.reduce((formattedEntities, entity) => {
+    formattedEntities[entity.id] = {
+      ...entity,
     }
-    return formattedMakes
+    return formattedEntities
   }, {})
 }
 
-export function formatModels(models) {
-  return models.reduce((formattedModels, model) => {
-    formattedModels[model.id] = {
-      ...model,
-    }
-    return formattedModels
-  }, {})
-}
-
-function formatCarOfTheWeek(props) {
+export function formatCarOfTheWeek(props) {
   const {carOfTheWeek, models} = props
-  const formattedModels = formatModels(models)
+  const formattedModels = formatEntities(models)
   const car = formattedModels[carOfTheWeek.modelId]
+  delete carOfTheWeek.modelId
   return {
     ...carOfTheWeek,
     ...car,

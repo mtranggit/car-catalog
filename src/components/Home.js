@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import formatDollar from '../utils/formatDollar'
 
-const Home = ({car}) => {
+export const Home = ({car}) => {
   if (car === null) {
     return <div>No car found</div>
   }
