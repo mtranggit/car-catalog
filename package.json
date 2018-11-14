@@ -21,6 +21,7 @@
     "test": "react-scripts test",
     "testcafe:test": "APP_TEST_ENV=test testcafe chrome testcafe/*.e2e.js -s testcafe",
     "testcafe": "testcafe chrome testcafe/*.e2e.js -s testcafe",
+    "deploy:aws": "yarn build && aws s3 cp build/ s3://amitlive.com --recursive",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
